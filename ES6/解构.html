@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// 数组解构
+			const HOBBY = ['吃饭', '睡觉', '打豆豆'];
+			let [eat, sleep, doudou] = HOBBY;
+			console.log(eat);
+			console.log(sleep);
+			console.log(doudou);
+			// 对象结构
+			const zhao = {
+				name: '老赵',
+				age: '99',
+				xiaoping: function () {
+					console.log('我可以演小品');
+				},
+			};
+			let { name, age, xiaoping } = zhao;
+			console.log(name);
+			console.log(age);
+			console.log(xiaoping);
+			xiaoping();
+		</script>
+	</body>
+</html>

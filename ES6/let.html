@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// 变量不能重复声明，会污染
+			// let star = '小明';
+			// let star = '老王';
+			// 块级作用域
+			// {
+			// 	let girl = '周扬青';
+			// }
+			// console.log(girl);
+
+			// console.log(song);
+			// let song = '唱歌达人';
+			{
+				let school = '美好的一天';
+				function fn() {
+					console.log(school);
+				}
+				fn();
+			}
+		</script>
+	</body>
+</html>

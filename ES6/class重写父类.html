@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			class Father {
+				constructor(name, age) {
+					this.name = name;
+					this.age = age;
+				}
+				hobby() {
+					console.log('完美的日子，今天的下午茶是酸奶');
+				}
+			}
+			class Son extends Father {
+				constructor(name, age, color, xiaoming) {
+					super(name, age);
+					this.color = color;
+					this.xiaoming = xiaoming;
+				}
+				song() {
+					console.log('我今天唱了一首歌');
+				}
+				// 对父类中的方法和属性进行重写：在子类中命名和父类中相同的元素
+				name = '老杨';
+				hobby() {
+					console.log('onCall');
+				}
+			}
+			let littleSon = new Son('老王', 99, 'yellow', '狗蛋');
+			console.log(littleSon);
+			littleSon.hobby();
+		</script>
+	</body>
+</html>

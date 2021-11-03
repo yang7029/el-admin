@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<script>
+			// 数组的合并
+			const play = ['跳绳', '手游', '端游'];
+			const song = ['挪威的森林', '成都', '好日子'];
+			// 第一种方式  使用  concat
+			const arr = play.concat(song);
+			console.log(arr);
+			// 第二种方式 使用 扩展运算符
+			const arr1 = [...play, ...song];
+			console.log(arr1);
+			// 数组的克隆
+			const cloneArr = [...play];
+			console.log(cloneArr);
+			// 将伪数组转为真正的数组，就可以用数组的一些方法
+			let divs = document.querySelectorAll('div');
+			console.log(divs, typeof divs);
+			const divsArr = [...divs];
+			console.log(divsArr, typeof divsArr);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// 数组去重
+			{
+				let arr = [1, 2, 3, 4, 5, 6, 1, 4];
+				let setArr = new Set(arr);
+				console.log(setArr);
+				console.log([setArr]);
+				// 变成数组的形式
+				console.log([...setArr]);
+			}
+
+			// 交集
+			{
+				let arr = [1, 2, 3, 4, 5, 6, 1, 4];
+				let arr2 = [5, 6, 7, 5, 6, 7];
+				// 1. 首先给arr1去重：比较好比较
+				let setArr2 = new Set(arr2);
+				// 给arr去重，并且变成数组的模样
+				const result = [...new Set(arr)].filter(item => {
+					// set方法：has     setArr2的has方法判断遍历出来的item中有没有重复的值，如果重复返回true的值，如果不重复，返回false的值
+					if (setArr2.has(item)) {
+						return true;
+					} else {
+						return false;
+					}
+				});
+				console.log(result);
+			}
+
+			// 并集
+			{
+				console.log('并集');
+				let arr = [1, 2, 3, 4, 5, 6, 1, 4];
+				let arr2 = [5, 6, 7, 5, 6, 7];
+				// 第一种方式
+				const setbing = [...new Set([...new Set(arr), ...new Set(arr2)])];
+				console.log(setbing);
+				// 第二种方式：不会从小到大的排列
+				const result = [...new Set(arr2.concat(arr))];
+				console.log(result);
+				// 第三种方式
+				const res = [...new Set([...arr, ...arr2])];
+				console.log(res);
+			}
+
+			// 差集
+			{
+				let arr = [1, 2, 3, 4, 5, 6, 1, 4];
+				let arr2 = [5, 6, 7, 5, 6, 7];
+				// 1. 首先给arr1去重：比较好比较
+				let setArr2 = new Set(arr2);
+				// 给arr去重，并且变成数组的模样
+				const result = [...new Set(arr)].filter(item => {
+					// set方法：has     setArr2的has方法判断遍历出来的item中有没有重复的值，如果重复返回true的值，如果不重复，返回false的值
+					if (!setArr2.has(item)) {
+						return true;
+					} else {
+						return false;
+					}
+				});
+				console.log(result);
+			}
+		</script>
+	</body>
+</html>

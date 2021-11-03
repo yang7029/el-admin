@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// 对于class类中静态定义的方法，只属于原型对象，不属于实例对象  关键字是 static
+			class Phone {
+				static name = '手机';
+				static change() {
+					console.log('我可以改变世界');
+				}
+			}
+			let nokia = new Phone();
+			console.log(nokia.name); //undefined
+			console.log(Phone.name); //手机
+			Phone.change(); //正常输出
+		</script>
+	</body>
+</html>

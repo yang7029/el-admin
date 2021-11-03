@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>vue-router</title>
+	</head>
+	<body>
+    <div id="app">
+      <div class="header">
+        <h1>头部</h1>
+      </div>
+      <div class="left">
+        <p>
+          <ul>
+            <li><a href="#/foo">Go  foo</a></li>
+            <li><a href="#/bar">Go  Bar</a></li>
+            <br>
+            <router-link to='/foo'>foo</router-link>
+            <router-link to='/bar'>bar</router-link>
+          </ul>
+        </p>
+      </div>
+      <div class="main">
+        <router-view></router-view>
+      </div>
+    </div>
+		<script src="../node_modules/vue/dist/vue.js"></script>
+		<script src="../node_modules/vue-router/dist/vue-router.js"></script>
+    <script>
+      const foo = {
+        template:`<div>我是  foo  组件</div>`
+      }
+      const bar = {
+        template:`<div>我是 bar  组件</div>`
+      }
+      const router = new VueRouter({
+        routes:[
+          {path:'/foo', component:foo},
+          {path:'/bar', component:bar}
+        ]
+      })
+      const vm = new Vue({
+        el:'#app',
+        router
+      })
+    </script>
+	</body>
+</html>

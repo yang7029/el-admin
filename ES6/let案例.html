@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		.item {
+			width: 50px;
+			height: 30px;
+			border: 1px salmon solid;
+			float: left;
+			margin-right: 20px;
+		}
+	</style>
+	<body>
+		<div>
+			<h2>点击切换颜色</h2>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+		<script>
+			// 获取div元素
+			let items = document.getElementsByClassName('item');
+			// console.log(items);
+			// console.log(items.length);
+			for (var i = 0; i < items.length; i++) {
+				// console.log(i);
+				items[i].onclick = function () {
+					// 修改当前元素的背景
+					this.style.background = 'pink';
+					// items[i].style.background = 'pink';
+				};
+			}
+			console.log(window.i);
+			// for (let i = 0; i < items.length; i++) {
+			// 	console.log(i);
+			// 	// console.log(items.length);
+			// 	items[i].style.background = 'pink';
+			// }
+		</script>
+	</body>
+</html>

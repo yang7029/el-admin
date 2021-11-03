@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// Map声明
+			let m = new Map();
+			// 增加各种类型的值
+			m.set('name', 'laowang');
+			m.set('age', '24');
+			m.set('hobby', '跳舞');
+			m.set('change', () => {
+				console.log('今天是美好的一天！！！');
+			});
+			m.set('key', [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+			console.log(m);
+			// 返回元素的个数
+			console.log(m.size);
+			// 获取键名和键值
+			console.log(m.get('change'));
+			let key = {
+				school: 'fdsjalf',
+			};
+			m.set(key, ['上海', '北京', '广州']);
+			console.log(m.get(key));
+			// 删除
+			m.delete('name');
+			console.log(m);
+			// 清空
+			// m.clear();
+			// console.log(m);
+			for (let v of m) {
+				console.log(v);
+			}
+		</script>
+	</body>
+</html>

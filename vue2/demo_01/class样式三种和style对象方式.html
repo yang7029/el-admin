@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		.green {
+			background-color: green;
+		}
+
+		.red {
+			color: red;
+		}
+
+		.size {
+			font-size: 60px;
+		}
+	</style>
+
+	<body>
+		<div id="app">
+			<h3>class字符串形式：动态的绑定（v-model），需要用到data里面的值</h3>
+			<p :class="activeGreen">机器人压测------背景绿色</p>
+			<h3>class对象形式：动态绑定（v-model）需要用到data中定义的true和false来进行判断</h3>
+			<p :class="{red:activeRed, size:activeSize}">机器人压测-------字体红色/60px</p>
+			<h3>class数组形式：动态绑定（v-model）直接写样式名，但是样式名必须用到字符串</h3>
+			<p :class="['green','red','size']">机器人压测-----背景绿色，字体红色大小为60px</p>
+			<h3>style对象形式，属性名需要用到驼峰命名法，在data中直接写好参数，直接用style对象形式动态绑定</h3>
+			<p :style="{color:styleColor,fontSize:styleSize}">style对象写法</p>
+		</div>
+		<script src="../node_modules/vue/dist/vue.js"></script>
+		<script>
+			let vm = new Vue({
+				el: '#app',
+				data: {
+					activeGreen: 'green',
+					activeRed: true,
+					activeSize: true,
+					styleColor: 'yellow',
+					styleSize: '40px',
+				},
+			});
+		</script>
+	</body>
+</html>

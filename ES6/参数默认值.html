@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// 给形参赋值，赋初始值，一般位置靠后(潜规则)
+			function fn(a, b, c = 60) {
+				console.log(a + b + c);
+			}
+			fn(10, 20);
+			// 结构赋值相结合
+			function context({ host = '1233', username, password, port }) {
+				console.log(host);
+				console.log(username);
+				console.log(password);
+				console.log(port);
+			}
+			context({
+				// host: 'yagbin.com',
+				username: 'root',
+				password: 123456,
+				port: 3306,
+			});
+		</script>
+	</body>
+</html>

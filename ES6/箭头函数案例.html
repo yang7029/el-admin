@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		div {
+			width: 200px;
+			height: 200px;
+			background-color: seagreen;
+		}
+	</style>
+	<body>
+		<div id="ad"></div>
+		<script>
+			// 两秒后边粉色
+			let ad = document.getElementById('ad');
+			ad.addEventListener('click', function () {
+				// 只需要吧这儿换成箭头函数，this的指向问题就解决了，直接指向这个函数，那就是ad
+				const _this = this;
+				setTimeout(function () {
+					// 定时器的this指向window，所以this这里指向不顶用
+					// this.style.background = 'pink';
+					_this.style.background = 'pink';
+				}, 2000);
+			});
+			// 从数组中返回偶数元素
+			const arr = [10, 34, 33, 3, 75, 89];
+			let result = arr.filter(item => {
+				if (item % 2 === 0) {
+					return true; // 意思是返回是true的值
+				} else {
+					return false;
+				}
+			});
+			console.log(result);
+		</script>
+	</body>
+</html>

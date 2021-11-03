@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// 声明一个Set  类型是一个对象
+			let s = new Set();
+			console.log(s, typeof s);
+			let s2 = new Set(['大事', '小事', '坏事', '好事', '小事']);
+			// console.log(s2);
+			// // size 方法
+			// console.log(s2.size);
+			// // add方法
+			// console.log(s2.add('喜事'));
+			// // delete方法
+			// console.log(s2.delete('大事'));
+			// console.log(s2);
+			// // has方法
+			// console.log(s2.has('123'));
+			// console.log(s2.has('喜事'));
+			// clear方法
+			s2.clear();
+			console.log(s2);
+			// 遍历
+			for (let v of s2) {
+				console.log(v);
+			}
+		</script>
+	</body>
+</html>

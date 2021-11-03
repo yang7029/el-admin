@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// 第一种方式创建Symbol
+			let s = Symbol();
+			console.log(s, typeof s);
+			// 往Symbol中田间字符串，为的是方便理解，Symbol的值是唯一的，不能相等，函数的形式创建
+			let s2 = Symbol('yang');
+			let s3 = Symbol('yang');
+			console.log(s2 === s3);
+			// 第二种方式穿件Symbol，这个值是相等的，函数对象的形式创建
+			let s4 = Symbol.for('123');
+			let s5 = Symbol.for('123');
+			console.log(s4 === s5);
+			// 不能与其他数据类型进行运算
+			let res = s + 100;
+			console.log(res);
+			// 错误： Cannot convert a Symbol value to a number
+		</script>
+	</body>
+</html>

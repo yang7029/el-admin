@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app">
+			<button @click="increment">自增</button>
+			<h2>{{count}}</h2>
+			<button @click="decrement">自减</button>
+		</div>
+		<script src="./vue/vue.js"></script>
+		<script>
+			Vue.createApp({
+				data() {
+					return {
+						count: 0,
+					};
+				},
+				methods: {
+					increment() {
+						this.count++;
+					},
+					decrement() {
+						this.count--;
+					},
+				},
+			}).mount('#app');
+		</script>
+	</body>
+</html>

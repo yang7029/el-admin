@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			class Father {
+				// 共有属性
+				name;
+				age;
+				// 私有属性
+				#weight;
+				#height;
+				constructor(name, age, wieght) {
+					this.name = name;
+					this.age = age;
+					this.#weight = wieght;
+				}
+				hobby() {
+					console.log('123');
+				}
+			}
+			const result = new Father('laowang', 99, '65kg');
+			console.log(result);
+		</script>
+	</body>
+</html>

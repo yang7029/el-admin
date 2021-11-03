@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// 定义父类
+			class Phone {
+				// 构造方法
+				constructor(brand, price) {
+					this.brand = brand;
+					this.price = price;
+				}
+				// 父类成员属性
+				hobby() {
+					console.log('我可以改变世界');
+				}
+			}
+			// 定义子类 继承父类的一些属性元素   extends
+			class SmartPhone extends Phone {
+				//  构造方法，需要把父类的一些参数传递过来，如果不传递过来，会报错
+				constructor(brand, price, color, size) {
+					// 用super()进行触发 父类的一些属性和方法
+					super(brand, price);
+					this.color = color;
+					this.size = size;
+				}
+				photo() {
+					console.log('我最不想的就是拍照');
+				}
+				playGame() {
+					console.log('我其实一般玩游戏');
+				}
+				hobby() {
+					console.log('今天的天气还不错');
+				}
+			}
+			let oppo = new SmartPhone('oppo', 5999, 'black', '6.6nic');
+			console.log(oppo);
+			oppo.photo();
+			oppo.hobby();
+		</script>
+	</body>
+</html>

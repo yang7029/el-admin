@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			let game = {
+				name: '王小二',
+				up() {
+					console.log('我可以');
+				},
+				down() {
+					console.log('我是乡下的');
+				},
+			};
+			let method = {
+				up: Symbol(),
+				down: Symbol(),
+			};
+			game[method.up] = () => {
+				console.log('今天的天气有点好啊');
+			};
+			game[method.down] = () => {
+				console.log('雨下来了');
+			};
+			console.log(game);
+
+			const hobby = {
+				name: '小明',
+				[Symbol('say')]: () => {
+					console.log('123');
+				},
+				[Symbol('song')]: () => {
+					console.log('456');
+				},
+			};
+			console.log(hobby);
+		</script>
+	</body>
+</html>

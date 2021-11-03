@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			let name = '杨蜀黍';
+			let change = function () {
+				console.log('杨蜀黍可以改变');
+			};
+			const school = {
+				name,
+				change,
+				imporve() {
+					console.log('今天是个好日子');
+				},
+			};
+			change();
+			console.log(school);
+			school.imporve();
+		</script>
+	</body>
+</html>

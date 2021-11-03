@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app">{{message}}</div>
+		<script src="../node_modules/vue/dist/vue.js"></script>
+		<script>
+			const vm = new Vue({
+				el: '#app',
+				data: {
+					message: '玛卡玛卡的小推车',
+				},
+				// vue实例创建前调用，模板和数据没有初始化完成，都是undefined
+				beforeCreate() {
+					console.log('beforeCreate()', this.$el, this.$data);
+				},
+				// vue实例创建后调用，模板未获取到，数据data已获取到               重点： ajax请求一般在created中请求。放在mounted中会在重新渲染一次
+				created() {
+					console.log('created()', this.$el, this.$data);
+				},
+				// vue实例挂载前调用，模板获取到，数据data还未挂载 还是 原始状态{{message}}
+				beforeMount() {
+					console.log('beforemouted()', this.$el, this.data);
+				},
+				// vue实例挂载后调用，数据挂载到了模板上  挂载上的数据是：玛卡玛卡的小推车
+				mounted() {
+					console.log('mounted()', this.$el, this.$data);
+				},
+				// vue实例中的数据更新之前    beforeUpdate和Updated这俩数据在浏览器中进行更改   vm.message='妈了个八字的小推车'
+				beforeUpdate() {
+					console.log(
+						'beforeUpdate()',
+						this.$el.innerHTML,
+						this.$data
+					);
+				},
+				// vue实例更新后更新数据，用innerhtml的效果能够看出来
+				updated() {
+					console.log('Update()', this.$el.innerHTML, this.$data);
+				},
+				// vue实例对象销毁前调用                     重点：一般在实例对象销毁后，做一些收尾工作
+				beforeDestroy() {
+					console.log('beforeDestroy()');
+				},
+				// vue实例对象销毁后调用
+				destroyed() {
+					console.log('destory()');
+				},
+			});
+		</script>
+	</body>
+</html>

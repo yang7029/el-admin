@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// 箭头函数的声明
+			// let fn = (a, b) => {
+			// 	return a + b;
+			// };
+			// let result = fn(10, 20);
+			// console.log(result);
+			function getName() {
+				console.log(this.name);
+			}
+			let getName2 = () => {
+				console.log(this.name);
+			};
+			window.name = '老王';
+			const school = {
+				name: '王八蛋',
+			};
+			getName();
+			getName2();
+
+			//  通过call改变this指向，箭头函数都不改变
+			getName.call(school);
+			getName2.call(school);
+
+			// 	let Person = (name, age) => {
+			// 		this.name = name;
+			// 		this.age = age;
+			// 	};
+			// 	let me = new Person('xiao', 30);
+			// 	console.log(me);
+
+			// 不能使用 arguments 对象   arguments 是个特殊的变量，能够保留实参
+			function fn(a, b, c) {
+				console.log('arguments', arguments, typeof arguments);
+			}
+			fn(1, 2, 3);
+			// let func = (a, b, c) => {
+			// 	console.log(arguments);
+			// };
+			// func(1, 2, 3);
+
+			// 函数的简写
+			// 当只有一个参数的时候，括号可以省略
+			let add = n => {
+				return n + n;
+			};
+			let result = add(8);
+			console.log(result);
+			// 当只有一条语句的时候，需要省略return和大括号，也可以省略小括号
+			let inc = n => n * n;
+			console.log(inc(10));
+		</script>
+	</body>
+</html>

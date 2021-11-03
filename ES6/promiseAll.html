@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			const p1 = new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve('获取商品数据-----1');
+				}, 2000);
+			});
+
+			const p2 = new Promise((resolve, reject) => {
+				setTimeout(() => {
+					reject('获取商品数据------2');
+				}, 2000);
+			});
+			// 错误的会执行错误的，正确的会执行正确的 返回的值和状态都有，返回的值个执行个的
+			const result = Promise.allSettled([p1, p2]);
+			console.log(result);
+			// 如果返回的Promise有一个错误，那么状态是失败的
+			const res = Promise.all([p1, p2]);
+			console.log(res);
+		</script>
+	</body>
+</html>

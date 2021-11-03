@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			const P = new Promise(function (resolve, reject) {
+				// 封装异步的操作
+				setTimeout(function () {
+					// 成功调用的函数
+					// let data = '读取用户数据';
+					// resolve(data);
+					// 失败调用的函数
+					let data = '读取用户数据失败';
+					reject(data);
+				}, 2000);
+			});
+			// Promise 的then方法
+
+			P.then(
+				function (value) {
+					console.log(value);
+				},
+				function (reason) {
+					console.log(reason);
+				}
+			);
+		</script>
+	</body>
+</html>

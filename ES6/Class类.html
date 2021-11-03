@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// es5
+			{
+				function Phone(brand, price) {
+					this.brand = brand;
+					this.price = price;
+				}
+
+				// 添加方法 添加到的地方是原型上
+				Phone.prototype.hobby = function () {
+					console.log('我的爱好是打电话');
+				};
+
+				// 实例化对象
+				const result = new Phone('huawei', 5999);
+				result.hobby();
+				console.log(result);
+			}
+
+			// es6 class类方法
+			{
+				class Phone {
+					// 构造方法 名字不能修改固定    constructor是自动执行的，当我们的 new 一个新的实例对象的时候，会执行的函数
+					constructor(brand, price) {
+						this.brand = brand;
+						this.price = price;
+					}
+					// 添加方法  直接这样写，不能使用es5的完整形式
+					hobby() {
+						console.log('我的爱好是睡觉，我上辈子没有睡够');
+					}
+				}
+				// 进行实例化
+				let shouji = new Phone('1+', 19999);
+				shouji.hobby();
+				console.log(shouji);
+			}
+		</script>
+	</body>
+</html>

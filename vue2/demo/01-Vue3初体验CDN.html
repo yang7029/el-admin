@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app"></div>
+		<script src="https://unpkg.com/vue@next"></script>
+		<script>
+			// 创建对象 在创建的APP中使用
+			const why = {
+				template: `<h2>Hello world</h2>`,
+			};
+			// 创建app
+			const app = Vue.createApp(why);
+			// 挂载 挂载到这个id为app的这个div上
+			app.mount('#app');
+
+			// 流程：创建对象，吧对象传入到这个app，通过mount挂载到这个id为app的div上
+		</script>
+	</body>
+</html>

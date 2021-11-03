@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    数学：<input type="text" v-model="sumScore">
+    英语：<input type="text" v-model="engScore"><br>
+    总得分：<input type="text" v-model="add()"><br>
+    总得分：<input type="text" v-model="add1">
+    总得分：<input type="text" v-model="add2">
+    总得分(watch)：<input type="text" v-model="xinSunScore">
+    总得分(watch2)：<input type="text" v-model="xinSunScore2">
+
+
+
+
+  </div>
+ <script src="../node_modules/vue/dist/vue.js"></script>
+ <script>
+   let vm = new Vue({
+     el:"#app",
+     data:{
+       sumScore: 90,
+       engScore: 80,
+       xinSunScore: 0,
+       xinSunScore2: 0,
+
+     },
+    //  计算属性有缓存功能，当依赖的值不改变的时候，只会调用一次，
+    //  方法是每次都调用
+    //  计算属性默认的是get属性
+    //  set是进行设置值，set是当get值变化执行完后得到的新值
+    //  注意get和set的写法，都是函数，计算属性是对象
+     methods:{
+       add(){
+         console.log('调用了add函数')
+         return (this.sumScore-0) + (this.engScore-0)
+       }
+     },
+     computed:{
+       add1(){
+        console.log('调用了add1函数')
+         return (this.sumScore-0) + (this.engScore-0)
+       },
+       add2:{
+         get(){
+          console.log('调用了add2函数')
+         return (this.sumScore-0) + (this.engScore-0)
+         },
+         set(newValue){
+           console.log('调用了set函数',newValue)
+           this.sumScore = newValue / 2
+           this.engScore = newValue / 2
+         }
+       }
+     },
+    //  第一种监听，直接写监听器
+    //  第二种监听器，调用vue实例对象进行监听
+     watch:{
+      sumScore(newValue, oldValue){
+        console.log('watch1调用了')
+        this.xinSunScore = (newValue-0) + (this.engScore-0)
+      }
+     }
+   })
+  //  watch的监听的第二中方法
+  // 第一个值：监听的属性
+  //  第二个值：监听的回调函数
+   vm.$watch('sumScore',function (newValue){
+    console.log('watch2调用了')
+    this.xinSunScore2 = (newValue-0) + (this.engScore-0)
+   })
+ </script> 
+</body>
+</html>

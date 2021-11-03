@@ -1,0 +1,28 @@
+{
+  "name": "webpack-demo4-cssloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "show": "webpack -v",
+    "build": "webpack",
+    "start": "node ./src/main.js",
+    "watch": "webpack --watch",
+    "dev": "webpack-dev-server --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "css-loader": "^4.2.1",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.1.1"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "style-loader": "^3.2.1",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
